@@ -36,4 +36,39 @@ window.onload = function () {
             modal_negative.style.display = "none";
         }
     }
+    
+    var review_g_button = document.getElementById("review_google");
+    var review_y_button = document.getElementById("review_yelp");
+    review_g_button.addEventListener('click', function () {
+        enter_into_drawing(); 
+    });
+    review_y_button.addEventListener('click', function () {
+        enter_into_drawing(); 
+    });
+}
+function enter_into_drawing () {
+    var name = document.getElementById("review_name");
+    var email = document.getElementById("review_email");
+    $.ajax({
+       'method': 'POST',
+        'url': 'https://cobblestoneserver.herokuapp.com/kiosk/enter_into_drawing.php',
+        'data': {
+            'name': name,
+            'email': email
+        }
+    });
+}
+function send_negative_feedback () {
+    var name = document.getElementById("review_name");
+    var email = document.getElementById("review_email");
+    var feedback = document.getElementById("review_comments");
+    $.ajax({
+        'method': 'POST',
+        'url': 'https://cobblestoneserver.herokuapp.com/kiosk/send_negative_feedback.php',
+        'data': {
+            'name': name,
+            'email': email,
+            'feedback': feedback
+        }
+    })
 }

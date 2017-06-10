@@ -54,7 +54,8 @@ function enter_into_drawing () {
         'url': 'https://cobblestoneserver.herokuapp.com/kiosk/enter_into_drawing.php',
         'data': {
             'name': name,
-            'email': email
+            'email': email,
+            'key': 'rpm_1'
         }
     });
 }
@@ -68,7 +69,8 @@ function send_negative_feedback () {
         'data': {
             'name': name,
             'email': email,
-            'feedback': feedback
+            'feedback': feedback,
+            'key': 'rpm_1'
         }
     })
 }

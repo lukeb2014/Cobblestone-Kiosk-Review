@@ -37,14 +37,14 @@ window.onload = function () {
         }
     }
     
-    var review_g_button = document.getElementById("review_google");
+    /*var review_g_button = document.getElementById("review_google");
     var review_y_button = document.getElementById("review_yelp");
     review_g_button.addEventListener('click', function () {
         enter_into_drawing(); 
     });
     review_y_button.addEventListener('click', function () {
         enter_into_drawing(); 
-    });
+    });*/
 }
 function enter_into_drawing () {
     var name = document.getElementById("review_name");
@@ -54,8 +54,7 @@ function enter_into_drawing () {
         'url': 'https://cobblestoneserver.herokuapp.com/kiosk/enter_into_drawing.php',
         'data': {
             'name': name,
-            'email': email,
-            'key': 'rpm_1'
+            'email': email
         }
     });
 }
@@ -69,8 +68,7 @@ function send_negative_feedback () {
         'data': {
             'name': name,
             'email': email,
-            'feedback': feedback,
-            'key': 'rpm_1'
+            'feedback': feedback
         }
     })
 }
